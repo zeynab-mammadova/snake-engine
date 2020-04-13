@@ -10,7 +10,8 @@ import java.util.stream.Collectors;
  * https://en.wikipedia.org/wiki/Lee_algorithm
  * https://ru.wikipedia.org/wiki/Алгоритм_Ли
  */
-public class Lee {
+public class
+Lee {
   private final static List<LeePoint> deltas = new ArrayList<LeePoint>(){{
     add(new LeePoint(0,-1));
     add(new LeePoint(-1,0));
@@ -32,8 +33,8 @@ public class Lee {
   public String formatted(LeePoint point, List<LeePoint> path) {
     int val = get(point);
     if (val == OBSTACLE) return " XX ";
-    if (path.isEmpty()) return String.format("%3d ", val);       // intermediate steps
-    if (path.contains(point)) return String.format("%3d ", val); // final step
+    if (path.isEmpty()) return String.format("%3d ", val);
+    if (path.contains(point)) return String.format("%3d ", val); 
     return " __ ";
   }
 
@@ -126,7 +127,6 @@ public class Lee {
       next.clear();
     }
     if (!found) return Optional.empty();
-    // path found. collect it
     set(start, 0);
     ArrayList<LeePoint> path = new ArrayList<>();
     path.add(finish);

@@ -8,7 +8,7 @@ public class YourSolver implements Solver<Board> {
 
   @Override
   public String get(Board board) {
-    SmartSnake ss = new SmartSnake(board);
+    MySnake ss = new MySnake(board);
     Direction solved = ss.solve();
     return solved.toString();
   }
